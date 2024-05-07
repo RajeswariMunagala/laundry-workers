@@ -20,6 +20,56 @@
         <!-- TITLE OF SITE -->
         <title>Laundry Workers</title>
 
+		<style>
+			/* Style for the container */
+			#promotion-container {
+				width: 100%;
+				height: 200px; /* Adjust height as needed */
+				overflow: hidden;
+				position: relative;
+			}
+		
+			/* Style for individual promotions */
+			.promotion {
+				position: absolute;
+				bottom: 0;
+				left: 100%; /* Initially hides the promotion outside the container */
+				width: 100%;
+				min-width: 350px;
+				height: auto;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				background-color: #f2f2f2;
+				transition: left 0.9s ease-in-out;
+			}
+		
+			/* Style for the image */
+			.promotion img {
+				max-width: 50%;
+				height: auto;
+			}
+		
+			/* Style for the text information */
+			.promotion .text {
+				max-width: 50%;
+				padding: 10px;
+				padding-left: 85px;
+			}
+		
+			/* Animation to slide the promotions */
+			.move {
+				left: 0;
+			}
+			.imgsize{
+				
+				min-width: 80px;
+				min-height:60px ;
+		
+			}
+		   
+		</style>
+
         <!-- for title img -->
 		<link rel="shortcut icon" type="image/icon" href="assets/images/logo/favicon.png"/>
        
@@ -588,7 +638,68 @@
         <script type="text/javascript" src="assets/js/jak-menusearch.js"></script>
         <script type="text/javascript" src="assets/js/custom.js"></script>
 		
-
+     	
+		<div id="promotion-container">
+    
+			<a href="https://deliveryboys.netlify.app"> <div class="promotion">
+				<p> Ads </p>
+				<div class="image">
+					<img class="imgsize" src="images/delivery boys.jpg" alt="Promotion 1">
+				</div>
+				<div class="text">
+					
+					<p>delivery boys</p>
+				</div>
+			</div></a>
+		
+			<a href="https://centringworkers.netlify.app"><div class="promotion">
+				<p> Ads </p>
+				<div class="image">
+					<img class="imgsize" src="images/work3.jpg" alt="Promotion 2">
+				</div>
+				<div class="text">
+					<p>centring workers</p>
+				</div>
+			</div></a>
+		   
+			<a href="https://clayworkers.netlify.app"><div class="promotion">
+				<p> Ads </p>
+				<div class="image">
+					<img class="imgsize" src="images/cw6.jpg" alt="Promotion 3">
+				</div>
+				<div class="text">
+					<p>clay workers</p>
+				</div>
+			</div></a>
+		
+			<a href="https://goldworkers.netlify.app"><div class="promotion">
+				<p> Ads </p>
+				<div class="image">
+					<img class="imgsize" src="images/gold.jpg" alt="Promotion 4">
+				</div>
+				<div class="text">
+					<p>Gold Workers..</p>
+				</div>
+			</div></a>
+		</div>
+		
+		<script>
+			// JavaScript to rotate promotions every 5 seconds
+			document.addEventListener('DOMContentLoaded', function () {
+				var promotions = document.querySelectorAll('.promotion');
+				var index = 0;
+		
+				function rotatePromotion() {
+					promotions[index].classList.remove('move');
+					index = (index + 1) % promotions.length;
+					promotions[index].classList.add('move');
+				}
+		
+				rotatePromotion(); // Initially display the first promotion
+		
+				setInterval(rotatePromotion, 10000); // Rotate promotion every 5 seconds
+			});
+		</script>
     </body>
 	
 </html>
